@@ -1,0 +1,40 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' testing the PWM nubers for a lab
+' test cases: 650, 675, 700, 725, 750, 775, 800, 825, 850
+
+leftPin VAR Word
+rightPin VAR Word
+leftPower VAR Word
+rightPower VAR Word
+maxTime VAR Word
+i VAR Word
+j VAR Word
+
+leftPower = 650
+rightPower = 850
+
+leftPin = 13
+rightPin = 12
+maxTime = 65000
+
+FOR i = 0 TO 8
+  DEBUG ? leftPower
+  DEBUG ? rightPower
+  FOR j = 1 TO 400 '400
+
+    PULSOUT leftPin, leftPower
+    PULSOUT rightPin, rightPower
+
+  NEXT
+
+  leftPower = leftPower + 25
+  rightPower = rightPower - 25
+  PAUSE 4000  '4000
+  NEXT
+
+HIGH 15
+PAUSE 10000
+'done testing
+
+END
