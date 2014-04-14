@@ -2,6 +2,8 @@
 ' {$PBASIC 2.5}
 ' testing the PWM nubers for a lab
 ' test cases: 650, 675, 700, 725, 750, 775, 800, 825, 850
+' the plan is to have loops that will run the bot once,
+'   showing speeds at all the points we want
 
 leftPin VAR Word
 rightPin VAR Word
